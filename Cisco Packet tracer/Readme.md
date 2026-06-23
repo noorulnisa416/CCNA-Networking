@@ -1,5 +1,8 @@
 # 🌐 Cisco Packet Tracer — Getting Started Course
 
+## 🏅 Certificate
+[👉 Click to View My Certificate](https://noorulnisa416.github.io/CCNA-Networking/Cisco%20Packet%20tracer/Certificate.html)
+
 > A complete beginner-friendly networking course using Cisco Packet Tracer, covering network fundamentals, IP configuration, device setup, and connectivity testing.
 
 ---
