@@ -1,0 +1,1260 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .SubStepNum {
+        text-indent: -25.5px;
+        margin-inline-start: 50px;
+      }
+      .component__content .component__body-inner .BodyTextL50 {
+        margin-inline-start: 30px;
+      }
+      .component__content .component__body-inner .Bulletlevel1 {
+        text-indent: -19px;
+        margin-inline-start: 48px;
+      }
+      .component__content .component__body-inner .Bulletlevel2 {
+          text-indent: -19px;
+          margin-inline-start: 72px;
+      }
+      .openTextBox__inner .openTextBox__widget .ReflectionQ, .component__content .component__body-inner .SubStepAlpha {
+          text-indent: -25.5px;
+          margin-inline-start: 30px;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article b67a933d-6b96-4dd0-b4b9-643ccc0e88dd remove-padding-top remove-padding-bottom ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$889518547$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$889518547$--> <div class=" article__title ">
+                      <!--?lit$889518547$--><heading-view aria-hidden="true" id="b67a933d-6b96-4dd0-b4b9-643ccc0e88dd-heading-view" headingtitle="Packet Tracer - Connect Devices using Wireless Technologies" modelid="b67a933d-6b96-4dd0-b4b9-643ccc0e88dd" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="js-heading is-incomplete">
+        <div class="js-heading-inner" role="heading" id="article-heading" aria-level="2">
+        <span class="aria-label"> <!--?lit$889518547$-->Incomplete &nbsp;<!--?lit$889518547$-->Packet Tracer - Connect Devices using Wireless Technologies</span>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></heading-view>
+                        <div tabindex="0" role="heading" class="article__title-inner " aria-level="2">
+                        <span class="accessibility-completion-indicator"><!--?lit$889518547$-->Incomplete </span>
+                        <!--?lit$889518547$-->Packet Tracer - Connect Devices using Wireless Technologies</div>
+                      </div>
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$889518547$--><!---->
+                                    <block-view modelid="fc742784-5e5a-43fc-88e7-88b0b0b6128b" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 50%;"><!---->
+                
+                <div data-socialgoodpulse-id="fc742784-5e5a-43fc-88e7-88b0b0b6128b" class="fc742784-5e5a-43fc-88e7-88b0b0b6128b block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="fc742784-5e5a-43fc-88e7-88b0b0b6128b" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$889518547$--><!----><text-view modelid="94407d5d-7956-4b17-8b94-0ab3aee94d59" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="94407d5d-7956-4b17-8b94-0ab3aee94d59" class="component text 94407d5d-7956-4b17-8b94-0ab3aee94d59  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$889518547$--><h2>Objectives</h2> <p class="BodyTextL25Bold">Part 1: Connect a Laptop to the Office WLAN</p> <p class="BodyTextL25Bold">Part 2: Connect Devices with Bluetooth Technology</p> <p class="BodyTextL25Bold">Part 3: Tether a Laptop to Use a Cellular Network via the Smartphone</p> <h2>Background</h2> <p class="BodyTextL25">In this Packet Tracer activity, you will use different wireless technologies to connect end devices in an office. The activity is performed in the Packet Tracer Physical Mode only.</p> <h2>Required Resources</h2> <p class="Bulletlevel1"><span style="font-size:7.0pt;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Latest Packet Tracer version</p> <h2>Instructions</h2> <h2>Part 1: Connect a Laptop to the Office WLAN</h2> <h3>Step 1: Install a wireless module to a Laptop.</h3> <p class="BodyTextL25Bold"><span style="font-weight:normal">a.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Laptop</b><span style="font-weight:normal"> to open the configuration window.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">b.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Under the </span><b>Physical</b><span style="font-weight:normal"> tab, power off the </span><b>Laptop</b><span style="font-weight:normal"> by clicking the power button.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">c.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Remove the Ethernet module </span><b>PT-LAPTOP-NM-1CFE</b><span style="font-weight:normal"> from the laptop by dragging it from the </span><b>Laptop</b><span style="font-weight:normal"> to the list on the left.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">d.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Insert the wireless module </span><b>WPC300N</b> <span style="font-weight:normal">by dragging it from the list on the left to the</span> <b>Laptop</b><span style="font-weight:normal">.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">e.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Power on the </span><b>Laptop</b><span style="font-weight:normal">.</span></p> <h3>Step 2: Connect Laptop to the office WLAN.</h3> <p class="BodyTextL25Bold"><span style="font-weight:normal">a.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Desktop</b><span style="font-weight:normal"> tab and select the </span><b>PC Wireless</b><span style="font-weight:normal"> tool.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">b.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Connect</b><span style="font-weight:normal"> tab and wait until the </span><b>Employee SSID WLAN</b><span style="font-weight:normal"> is displayed. Note that you may have to click </span><b>Refresh</b><span style="font-weight:normal">.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">c.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Employee</b><span style="font-weight:normal"></span> <b>SSID</b><span style="font-weight:normal"> to select it. Click </span><b>Connect</b><span style="font-weight:normal">.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">d.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Enter </span><b>Cisco123</b><span style="font-weight:normal"> as the pre-shared key and click </span><b>Connect</b><span style="font-weight:normal">.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">e.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">After connecting to the wireless network, close the </span><b>PC Wireless</b><span style="font-weight:normal"> window.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">f.<span>&nbsp;&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Config</b><span style="font-weight:normal"> tab and select </span><b>Wireless0</b><span style="font-weight:normal"> in the left pane to verify in the </span><b>IP Configuration</b><span style="font-weight:normal"> section</span><span style="font-weight:normal"> that the </span><b>Laptop</b><span style="font-weight:normal"> has been assigned an IP address.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">g.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Open the </span><b>Web Browser</b><span style="font-weight:normal"> from the </span>Desktop<span style="font-weight: normal">. Navigate to </span><b>office.srv</b><span style="font-weight:normal"> to verify that the </span><b>Laptop</b><span style="font-weight:normal"> has connectivity.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">h.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Close the </span><b>Laptop</b><span style="font-weight:normal"> window.</span></p> <h2>Part 2: Connect Devices with Bluetooth Technology</h2> <p class="BodyTextL25">In this part, you will connect a Bluetooth speaker to a tablet installed with a music player via Bluetooth.</p> <h3>Step 1: Enable Bluetooth ports on devices.</h3> <p class="BodyTextL25">a.<span>&nbsp;&nbsp;</span>Click the <b>Bluetooth </b>Speaker. </p> <p class="BodyTextL25">b.<span>&nbsp;&nbsp;</span>Click the <b>Config</b> tab. </p> <p class="BodyTextL25">c.<span>&nbsp;&nbsp;</span>Click <b>Bluetooth</b> on the left pane and check that the Port Status is <b>On</b>. Note that the speaker is not paired with the <b>Office Tablet</b>.</p> <h3>Step 2: Connect Bluetooth devices.</h3> <p class="BodyTextL25Bold"><span style="font-weight:normal">a.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Open the </span><b>Office Tablet</b><span style="font-weight:normal">. </span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">b.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Config tab</b><span style="font-weight:normal">. </span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">c.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click </span><b>Bluetooth</b><span style="font-weight:normal"> in the left pane and check the </span><b>On</b><span style="font-weight:normal"> box for Port Status.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">d.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click </span><b>Discover</b><span style="font-weight:normal"> and the </span><b>Bluetooth Speaker</b><span style="font-weight:normal"> device should be discovered.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">e.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Select the </span><b>Bluetooth Speaker</b><span style="font-weight:normal"> in the </span><b>Devices</b><span style="font-weight:normal"> list and click </span>Pair<span style="font-weight: normal">. The status should change to “Paired, Connected”. If prompted for permission to connect, click </span><b>Yes</b><span style="font-weight:normal">.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">f.<span>&nbsp;&nbsp;&nbsp;</span></span><span style="font-weight:normal">To test the Bluetooth connection, click the </span><b>Desktop</b><span style="font-weight:normal"> tab and select </span><b>Music Player</b><span style="font-weight:normal">. Click </span><b>Play/Stop</b><span style="font-weight:normal"> to start the music. </span><br><b>Note</b><span style="font-weight:normal">: Make sure your speaker is on.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">g.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click </span><b>Play/Stop</b><span style="font-weight:normal"> again to stop the sound.</span></p> <h2>Part 3: Tether a Laptop to Use a Cellular Network via the Smartphone</h2> <p class="BodyTextL25">In this part, you will tether a laptop to a smartphone via Bluetooth. The laptop will use the cellular network to access a website.</p> <h3>Step 1: Enable Bluetooth on the Laptop.</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Click the <b>User-Laptop</b>. Select the <b>Config</b> tab.</p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>Click <b>Bluetooth</b> on the left panel. Click <b>On</b> for the Port Status.</p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Leave the <b>User-Laptop</b> Bluetooth window open.</p> <h3>Step 2: Connect a smartphone to the Cellular network and enable Bluetooth.</h3> <p class="BodyTextL25Bold"><span style="font-weight:normal">a.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Smartphone</b><span style="font-weight:normal"> to open the configuration window.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">b.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>Config</b><span style="font-weight:normal"> tab. Check the </span>On<span style="font-weight: normal"> box for the Cellular Tethering setting in the </span><b>Global Settings</b><span style="font-weight:normal">.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">c.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click the </span><b>3G/4G Cell1 </b><span style="font-weight:normal">interface. Verify that the </span><b>Smartphone</b><span style="font-weight:normal"> has an IP address from the cellular network.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">d.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Click </span><b>Bluetooth</b><span style="font-weight:normal"> in the left pane and check the </span><b>On</b><span style="font-weight:normal"> box for the Port status on the </span><b>Smartphone</b><span style="font-weight:normal">.</span></p> <h3>Step 3: Connect Bluetooth devices and tethering to laptop</h3> <p class="BodyTextL25Bold"><span style="font-weight:normal">a.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">On the Bluetooth configuration for the </span><b>Smartphone</b><span style="font-weight:normal">, click </span><b>Discover</b><span style="font-weight:normal"> to search for nearby Bluetooth enabled-devices.</span></p> <p class="BodyTextL50"><b>Note</b>: If <b>Smartphone</b> does not appear after a while, move <b>Smartphone</b> closer to <b>User-Laptop</b> and click <b>Discover</b> again.</p> <p class="BodyTextL25Bold"><span style="font-weight:normal">b.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Select</span><b> User-Laptop</b><span style="font-weight:normal"> and click </span><b>Pair</b><span style="font-weight:normal">. A pop-up window appears and asks for permission. Click </span><b>Yes</b><span style="font-weight:normal">. The two devices are connected via Bluetooth.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">c.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">Return to the </span><b>User-Laptop</b><span style="font-weight:normal">. In the Bluetooth panel of the </span><b>Config</b><span style="font-weight:normal"> tab, highlight </span><b>Smartphone</b><span style="font-weight:normal"> and click </span><b>Tether</b><span style="font-weight: normal">.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">d.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">At the bottom pane of the Bluetooth configuration, notice that <span style="font-weight: normal"><b>User-Laptop</b> </span>has now obtained an IP address.</span></p> <p class="BodyTextL25Bold"><span style="font-weight:normal">e.<span>&nbsp;&nbsp;</span></span><span style="font-weight:normal">To test connectivity, navigate to <span style="font-weight:normal"><b>office.srv.</b></span> Click </span><b>Desktop</b><span style="font-weight:normal"><b> &gt;</b> </span><span style="font-weight: normal"><b>Web Browser</b>.</span> Enter <span style="font-weight:normal"><b>office.srv</b></span> in the URL field. You can fast forward time to speed up the process.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="02cb7ba3-3ebe-43b5-9e05-35a1e771e49c" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 50%;"><!---->
+                
+                <div data-socialgoodpulse-id="02cb7ba3-3ebe-43b5-9e05-35a1e771e49c" class="02cb7ba3-3ebe-43b5-9e05-35a1e771e49c block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="02cb7ba3-3ebe-43b5-9e05-35a1e771e49c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$889518547$--><!----><text-view modelid="e7c9f0e1-ea6c-435b-9929-e46319240e62" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="e7c9f0e1-ea6c-435b-9929-e46319240e62" class="component text e7c9f0e1-ea6c-435b-9929-e46319240e62  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$889518547$--><span> <hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span> </span></div>
+                      </div>
+                    </div>
+                  <!--?lit$889518547$-->
+                  <!--?lit$889518547$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$889518547$-->
+                    </div>
+                </div>
+            </div>
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style><script></script>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document?.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      let event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        ?.querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document?.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      ?.querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document?.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </body></html>
