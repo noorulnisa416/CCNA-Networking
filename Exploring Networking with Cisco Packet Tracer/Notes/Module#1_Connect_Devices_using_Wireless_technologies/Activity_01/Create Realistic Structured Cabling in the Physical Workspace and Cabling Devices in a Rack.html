@@ -1,0 +1,4020 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .SubStepNum {
+        text-indent: -25.5px;
+        margin-inline-start: 50px;
+      }
+      .component__content .component__body-inner .BodyTextL50 {
+        margin-inline-start: 30px;
+      }
+      .component__content .component__body-inner .Bulletlevel1 {
+        text-indent: -19px;
+        margin-inline-start: 48px;
+      }
+      .component__content .component__body-inner .Bulletlevel2 {
+          text-indent: -19px;
+          margin-inline-start: 72px;
+      }
+      .openTextBox__inner .openTextBox__widget .ReflectionQ, .component__content .component__body-inner .SubStepAlpha {
+          text-indent: -25.5px;
+          margin-inline-start: 30px;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article dc1250e9-4c19-438f-b823-5fd1ae36bd29 remove-padding-top remove-padding-bottom ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$24111569875$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$24111569875$--> <div class=" article__title ">
+                      <!--?lit$24111569875$--><heading-view aria-hidden="true" id="dc1250e9-4c19-438f-b823-5fd1ae36bd29-heading-view" headingtitle="Packet Tracer - Create Realistic Structured Cabling in the Physical Workspace and Cabling Devices in a Rack" modelid="dc1250e9-4c19-438f-b823-5fd1ae36bd29" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="js-heading is-incomplete">
+        <div class="js-heading-inner" role="heading" id="article-heading" aria-level="2">
+        <span class="aria-label"> <!--?lit$24111569875$-->Incomplete &nbsp;<!--?lit$24111569875$-->Packet Tracer - Create Realistic Structured Cabling in the Physical Workspace and Cabling Devices in a Rack</span>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></heading-view>
+                        <div tabindex="0" role="heading" class="article__title-inner " aria-level="2">
+                        <span class="accessibility-completion-indicator"><!--?lit$24111569875$-->Incomplete </span>
+                        <!--?lit$24111569875$-->Packet Tracer - Create Realistic Structured Cabling in the Physical Workspace and Cabling Devices in a Rack</div>
+                      </div>
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$24111569875$--><!---->
+                                    <block-view modelid="fc7bc836-105a-4dd3-9b41-4097a0a6fc57" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="fc7bc836-105a-4dd3-9b41-4097a0a6fc57" class="fc7bc836-105a-4dd3-9b41-4097a0a6fc57 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="fc7bc836-105a-4dd3-9b41-4097a0a6fc57" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><text-view modelid="cd406e44-587b-4bf8-aba5-4f29cb819514" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="cd406e44-587b-4bf8-aba5-4f29cb819514" class="component text cd406e44-587b-4bf8-aba5-4f29cb819514  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$24111569875$--><h2>Objectives</h2> <p class="BodyTextL25">In this activity, you will install a patch panel and a wall mount. You will then use these to connect network devices in the office to the equipment in the wiring closet.</p> <p class="BodyTextL25Bold">Part 1: Install a Patch Panel in the Wiring Closet</p> <p class="BodyTextL25Bold">Part 2: Attach a Wall Mount in the Office</p> <p class="BodyTextL25Bold">Part 3: Connect an Additional Wall Mount and Cables</p> <h2>Required Resources</h2> <p class="Bulletlevel1"><span style="font-size:7.0pt;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Latest Packet Tracer version</p> <h2>Instructions</h2> <h2>Part 1: Install a Patch Panel in the Wiring Closet</h2> <h3>Step 1: Install a patch panel in the Rack</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Click the <b>Equipment Cabinet</b> to access a simulated <b>Wiring Closet</b>.</p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>To install a patch panel, click <b>Connections</b> in the <strong><span style="font-family:&quot;Arial&quot;,sans-serif">Device-Type Selection Box</span></strong><strong><span>, and then click </span></strong><strong><span style="font-family:&quot;Arial&quot;,sans-serif">Structured Cabling</span></strong><strong><span>.</span></strong></p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>In the <strong><span style="font-family:&quot;Arial&quot;,sans-serif">Device-Specific Selection Box</span></strong><strong><span>, click the first option, which is </span></strong><b>Copper Patch Panel</b>.</p> <p class="SubStepAlpha">d.<span>&nbsp;&nbsp;</span>Click a desired location in the <b>Rack</b> to install the patch panel in the rack.</p> <p class="BodyTextL50"><b>Note</b>: For accurate grading, make sure the name of the patch panel is <b>Patch Panel0</b>.</p> <h3>Step 2: Connect the Office-SW1 to the patch panel.</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>From the <b>Cable Pegboard</b>, select a <b>Copper Straight-Through</b> cable.</p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>On the switch <b>Office-SW1</b>, click the <b>GigabitEthernet 1/0/13</b> port. Now locate and click <b>Jack13</b> on the <b>Patch Panel0</b>. </p> <p class="BodyTextL50"><b>Note</b>: Recall that you can right click the switch and the patch panel, select <b>Inspect Front</b>, and then zoom in to better locate the desired ports. You can also use the global <b>Zoom In</b> tool on the tool bar.</p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Use the following table to finish the connections between the <b>Patch Panel0</b> and <b>Office-SW-1</b>.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="4d93e05a-d1d7-4b57-be18-e01ef79b3655" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="4d93e05a-d1d7-4b57-be18-e01ef79b3655" class="4d93e05a-d1d7-4b57-be18-e01ef79b3655 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="4d93e05a-d1d7-4b57-be18-e01ef79b3655" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><table-view modelid="8bf7dccc-ab11-461c-87c3-1188cac77d0e" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+        <div class="table-inner component__inner"> 
+            <div data-socialgoodpulse-id="8bf7dccc-ab11-461c-87c3-1188cac77d0e" class="component table 8bf7dccc-ab11-461c-87c3-1188cac77d0e  is-full   ">
+                <div class="component__header-container">
+                    <div data-socialgoodpulse-id="8bf7dccc-ab11-461c-87c3-1188cac77d0e" class="table ">
+                        <base-view type="component" lowercase_component="table" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header table__header">
+              <div class="component__header-inner table__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                    </div>
+                </div>
+
+
+                <div class="component__widget table__widget">
+                <!--?lit$24111569875$-->
+                    <!--?lit$24111569875$-->Table Widget
+                
+                <table tabindex="0" style="min-width: 800px" aria-labelledby="table-caption-8bf7dccc-ab11-461c-87c3-1188cac77d0e">
+                <!--?lit$24111569875$--><!---->
+                    <tbody><tr class="table-row nth-child-0 ">
+                    <!--?lit$24111569875$--><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-0 ">
+                <!--?lit$24111569875$--><p class="TableHeading">Office-SW1</p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!----><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-1 ">
+                <!--?lit$24111569875$--><p class="TableHeading"><span style="color:black">Patch Panel0</span></p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-1 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G1/0/13</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack13</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-2 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G1/0/14</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack14</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-3 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G10/15</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack15</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-4 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G1/0/16</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack16</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!---->
+                </tbody></table>
+                </div>
+            </div>
+        <div>
+        </div>
+        </div></div><style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></table-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="b63ff5e7-06f3-4e3e-a77a-1927964307b2" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="b63ff5e7-06f3-4e3e-a77a-1927964307b2" class="b63ff5e7-06f3-4e3e-a77a-1927964307b2 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="b63ff5e7-06f3-4e3e-a77a-1927964307b2" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><text-view modelid="78e218bf-8eba-4a7c-b65f-9ed24c1991a9" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="78e218bf-8eba-4a7c-b65f-9ed24c1991a9" class="component text 78e218bf-8eba-4a7c-b65f-9ed24c1991a9  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$24111569875$--><p class="SubStepAlpha">d.<span>&nbsp;&nbsp;</span>If desired, you could also color code the cables in the rack. Right-click the desired cable, select <b>Color Cable</b>. Select or create the desired color, and click <b>OK</b>.</p> <p class="SubStepAlpha">e.<span>&nbsp;&nbsp;</span>If you do not like the cables dangling, you can organize them. Right-click any white space in the rack and select <b>Manage All Cables on Rack</b>. Now all your cables are organized on the rack.</p> <p class="SubStepAlpha">f.<span>&nbsp;&nbsp;&nbsp;</span>Click <b>Back level</b> (Alt-Left) to return to the <b>Office</b>.</p> <h2>Part 2: Attach a Wall Mount in the Office</h2> <h3>Step 1: Install a wall mount.</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>To install a wall mount, click <b>Connections</b> in the <strong><span style="font-family:&quot;Arial&quot;,sans-serif">Device-Type Selection Box</span></strong><strong><span>, and then click </span></strong><strong><span style="font-family:&quot;Arial&quot;,sans-serif">Structured Cabling</span></strong><strong><span>.</span></strong></p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>In the <strong><span style="font-family:&quot;Arial&quot;,sans-serif">Device-Specific Selection Box</span></strong><strong><span>, click </span></strong><b>Copper Wall Mount</b>.</p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Click the desired location on the wall next to the <b>Equipment Cabinet</b>.</p> <p class="BodyTextL50"><b>Note</b>: For accurate grading, make sure the name of the wall mount is <b>Wall Mount0</b>.</p> <p class="SubStepAlpha">d.<span>&nbsp;&nbsp;</span>In the <b>Device-Type Selection Box</b>, click <b>Connections</b>, and then click <b>Copper Straight-Through</b> cable.</p> <p class="SubStepAlpha">e.<span>&nbsp;&nbsp;</span>Click <b>Wall Mount0</b> and select <b>PunchDown1</b>. Then click the <b>Equipment Cabinet</b> (Wiring Closet) and select <b>Rack</b> &gt; <b>Patch Panel0</b> &gt; <b>Punchdown13</b>.</p> <p class="SubStepAlpha">f.<span>&nbsp;&nbsp;&nbsp;</span>Repeat for the rest of the available punchdowns on <b>Wall Mount0</b>.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="c9de631b-3f43-45e6-bb0e-c3ca0ec17ad4" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="c9de631b-3f43-45e6-bb0e-c3ca0ec17ad4" class="c9de631b-3f43-45e6-bb0e-c3ca0ec17ad4 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="c9de631b-3f43-45e6-bb0e-c3ca0ec17ad4" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><table-view modelid="7b289754-668a-4660-8e74-66e0879cda46" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+        <div class="table-inner component__inner"> 
+            <div data-socialgoodpulse-id="7b289754-668a-4660-8e74-66e0879cda46" class="component table 7b289754-668a-4660-8e74-66e0879cda46  is-full   ">
+                <div class="component__header-container">
+                    <div data-socialgoodpulse-id="7b289754-668a-4660-8e74-66e0879cda46" class="table ">
+                        <base-view type="component" lowercase_component="table" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header table__header">
+              <div class="component__header-inner table__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                    </div>
+                </div>
+
+
+                <div class="component__widget table__widget">
+                <!--?lit$24111569875$-->
+                    <!--?lit$24111569875$-->Table Widget
+                
+                <table tabindex="0" style="min-width: 800px" aria-labelledby="table-caption-7b289754-668a-4660-8e74-66e0879cda46">
+                <!--?lit$24111569875$--><!---->
+                    <tbody><tr class="table-row nth-child-0 ">
+                    <!--?lit$24111569875$--><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-0 ">
+                <!--?lit$24111569875$--><p class="TableHeading">Wall Mount (Next to Equipment Cabinet)</p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!----><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-1 ">
+                <!--?lit$24111569875$--><p class="TableHeading"><span style="color:black">Patch Panel</span></p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-1 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown1</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown13</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-2 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown2</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown14</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-3 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown3</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown15</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-4 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown4</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown16</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!---->
+                </tbody></table>
+                </div>
+            </div>
+        <div>
+        </div>
+        </div></div><style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></table-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="9e09acfc-88a9-4890-8595-17730692fcf6" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="9e09acfc-88a9-4890-8595-17730692fcf6" class="9e09acfc-88a9-4890-8595-17730692fcf6 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="9e09acfc-88a9-4890-8595-17730692fcf6" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><text-view modelid="d7013640-f3ea-4fa0-adcc-3b7408d3f31d" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="d7013640-f3ea-4fa0-adcc-3b7408d3f31d" class="component text d7013640-f3ea-4fa0-adcc-3b7408d3f31d  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$24111569875$--><p class="SubStepAlpha">g.<span>&nbsp;&nbsp;</span>Connect the PC <b>Office-Admin</b> and <b>Printer0</b> to any available jacks in the wall mount using <b>Copper Straight-Through</b> cables. After a minute or two, both devices will receive IP addressing information from the DHCP service running on the <b>Office-Server</b> inside the <b>Equipment Closet</b>.</p> <p class="SubStepAlpha">h.<span>&nbsp;&nbsp;</span>Verify connectivity by navigating to the web site http://office.srv. Click <b>Office-Admin</b> &gt; <b>Desktop</b> &gt; <b>Web Browser</b>. Enter<b> office.srv</b> in the URL field. This may take up to a minute. You can click <b>Go</b> to refresh the web page request.</p> <h3>Step 2: Organize the cables.</h3> <p class="BodyTextL25">In the Physical mode, you can organize the cables so that they are spanning across the entire room.</p> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Right-click the desired cable, select <b>Create BendPoint</b>.</p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>Drag the black square to the wall. Continue to create bendpoints and drag the bend points into the walls or floor until the cable no longer goes across the middle of the room</p> <p class="BodyTextL50">Using the bendpoints has the same effects as running the cables into the walls in an office.</p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Repeat the steps until you are satisfied with the results.</p> <h2>Part 3: Connect an Additional Wall Mount and Cables</h2> <p class="BodyTextL25">Now that you have connected <b>AdminOffice</b> and <b>Printer0</b> to the network, connect more cables to the patch panel, add another wall mount, and connect the <b>Office-User</b> <b>PC</b>.</p> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Return to the <b>Equipment Closet</b> and make the following connections:</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="6072667e-5782-4ce2-ab9b-a06cd0d241a0" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="6072667e-5782-4ce2-ab9b-a06cd0d241a0" class="6072667e-5782-4ce2-ab9b-a06cd0d241a0 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="6072667e-5782-4ce2-ab9b-a06cd0d241a0" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><table-view modelid="9a6b8c85-b953-4df3-bea8-d03dcb00e586" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+        <div class="table-inner component__inner"> 
+            <div data-socialgoodpulse-id="9a6b8c85-b953-4df3-bea8-d03dcb00e586" class="component table 9a6b8c85-b953-4df3-bea8-d03dcb00e586  is-full   ">
+                <div class="component__header-container">
+                    <div data-socialgoodpulse-id="9a6b8c85-b953-4df3-bea8-d03dcb00e586" class="table ">
+                        <base-view type="component" lowercase_component="table" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header table__header">
+              <div class="component__header-inner table__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                    </div>
+                </div>
+
+
+                <div class="component__widget table__widget">
+                <!--?lit$24111569875$-->
+                    <!--?lit$24111569875$-->Table Widget
+                
+                <table tabindex="0" style="min-width: 800px" aria-labelledby="table-caption-9a6b8c85-b953-4df3-bea8-d03dcb00e586">
+                <!--?lit$24111569875$--><!---->
+                    <tbody><tr class="table-row nth-child-0 ">
+                    <!--?lit$24111569875$--><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-0 ">
+                <!--?lit$24111569875$--><p class="TableHeading">Office-SW1</p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!----><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-1 ">
+                <!--?lit$24111569875$--><p class="TableHeading"><span style="color:black">Patch Panel0</span></p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-1 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G1/0/21</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack21</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-2 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G1/0/22</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack22</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-3 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G1/0/23</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack23</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-4 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">G1/0/24</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Jack24</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!---->
+                </tbody></table>
+                </div>
+            </div>
+        <div>
+        </div>
+        </div></div><style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></table-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="c4a140e8-83a1-46d3-93eb-f3e266ca8cba" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="c4a140e8-83a1-46d3-93eb-f3e266ca8cba" class="c4a140e8-83a1-46d3-93eb-f3e266ca8cba block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="c4a140e8-83a1-46d3-93eb-f3e266ca8cba" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><text-view modelid="f038cb61-f5d4-4911-8763-64c2d9bf0a2a" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="f038cb61-f5d4-4911-8763-64c2d9bf0a2a" class="component text f038cb61-f5d4-4911-8763-64c2d9bf0a2a  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$24111569875$--><p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>In the <b>Office</b>, add another <b>Wall Mount</b> next to the window and connect the wall mount to the patch panel using the following connections.</p> <p class="BodyTextL50"><b>Note</b>: For accurate grading, make sure the name of the wall mount is <b>Wall Mount1</b>.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="f6dd7655-ee7b-4beb-8386-5b7991a226b3" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="f6dd7655-ee7b-4beb-8386-5b7991a226b3" class="f6dd7655-ee7b-4beb-8386-5b7991a226b3 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="f6dd7655-ee7b-4beb-8386-5b7991a226b3" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><table-view modelid="9b2777a8-6812-4147-8039-571f2b506394" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+        <div class="table-inner component__inner"> 
+            <div data-socialgoodpulse-id="9b2777a8-6812-4147-8039-571f2b506394" class="component table 9b2777a8-6812-4147-8039-571f2b506394  is-full   ">
+                <div class="component__header-container">
+                    <div data-socialgoodpulse-id="9b2777a8-6812-4147-8039-571f2b506394" class="table ">
+                        <base-view type="component" lowercase_component="table" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header table__header">
+              <div class="component__header-inner table__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                    </div>
+                </div>
+
+
+                <div class="component__widget table__widget">
+                <!--?lit$24111569875$-->
+                    <!--?lit$24111569875$-->Table Widget
+                
+                <table tabindex="0" style="min-width: 800px" aria-labelledby="table-caption-9b2777a8-6812-4147-8039-571f2b506394">
+                <!--?lit$24111569875$--><!---->
+                    <tbody><tr class="table-row nth-child-0 ">
+                    <!--?lit$24111569875$--><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-0 ">
+                <!--?lit$24111569875$--><p class="TableHeading">N<span style="color:black">ew Wall Mount (Next to Window)</span></p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!----><!---->
+            <th scope="col" tabindex="0" rowspan="1" colspan="1" class="table-data table-heading nth-child-1 ">
+                <!--?lit$24111569875$--><p class="TableHeading"><span style="color:black">Patch Panel0</span></p>
+                <!--?lit$24111569875$-->
+            </th>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-1 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown1</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown21</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-2 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown2</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown22</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-3 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown3</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown23</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!----><!---->
+                    <tr class="table-row nth-child-4 ">
+                    <!--?lit$24111569875$--><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-0 " width="200">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown4</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!----><!---->
+            <td tabindex="0" rowspan="1" colspan="1" class="table-data nth-child-1 " width="">
+                <!--?lit$24111569875$--><p class="BodyTextL25">Punchdown24</p>
+                <!--?lit$24111569875$-->
+            </td>
+        <!---->
+                   </tr>  
+                    <!---->
+                </tbody></table>
+                </div>
+            </div>
+        <div>
+        </div>
+        </div></div><style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></table-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="e94a7d25-e40b-4747-b8ec-31d87f8f5afe" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="e94a7d25-e40b-4747-b8ec-31d87f8f5afe" class="e94a7d25-e40b-4747-b8ec-31d87f8f5afe block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="e94a7d25-e40b-4747-b8ec-31d87f8f5afe" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><text-view modelid="0bf34696-66b1-4ed6-9699-73fc022256e7" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="0bf34696-66b1-4ed6-9699-73fc022256e7" class="component text 0bf34696-66b1-4ed6-9699-73fc022256e7  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$24111569875$--><p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Connect the <b>Office-User PC</b> to your new wall mount.</p> <p class="SubStepAlpha">d.<span>&nbsp;&nbsp;</span>After a minute or two, verify the <b>Office-User</b> PC received IP addressing information and then verify connectivity to the web site <b>office.srv</b>.</p> <p class="SubStepAlpha">e.<span>&nbsp;&nbsp;</span>If desired, create bend points in the cables and organize them.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="e8fece21-50bd-45fa-a7c8-157d54e08a79" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 10%;"><!---->
+                
+                <div data-socialgoodpulse-id="e8fece21-50bd-45fa-a7c8-157d54e08a79" class="e8fece21-50bd-45fa-a7c8-157d54e08a79 block remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="e8fece21-50bd-45fa-a7c8-157d54e08a79" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$24111569875$--><!----><text-view modelid="a76e3ecf-0d1c-453d-a512-d8e724f23bb5" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="a76e3ecf-0d1c-453d-a512-d8e724f23bb5" class="component text a76e3ecf-0d1c-453d-a512-d8e724f23bb5  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$24111569875$--><span> <hr><span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span> </span></div>
+                      </div>
+                    </div>
+                  <!--?lit$24111569875$-->
+                  <!--?lit$24111569875$-->
+              </div>
+          </div>
+        </div>
+      
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$24111569875$-->
+                    </div>
+                </div>
+            </div>
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style><script></script>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document?.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      let event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        ?.querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document?.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      ?.querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document?.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </body></html>
